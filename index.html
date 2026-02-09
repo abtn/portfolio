@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Social Media -->
+    <title>Name | Civil Engineer & Full Stack Developer</title>
+    <meta name="description" content="Portfolio of a Civil Engineer turned Full Stack Developer specializing in Python, Flask, and Tailwind.">
+    <meta property="og:title" content="Name's Portfolio">
+    <meta property="og:description" content="Building Digital Structures with Solid Code.">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-primary: #0f172a;
+            --color-accent: #2563eb;
+            --color-bg: #f8fafc;
+            --color-text-main: #334155;
+            --color-text-light: #64748b;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Smooth Scroll Behavior */
+        html { scroll-behavior: smooth; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text-main);
+            line-height: 1.6;
+        }
+
+        /* Utility: Hide scrollbar but allow scrolling */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+        /* Animation for Page Load */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        nav { height: 70px; display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo { font-weight: 800; font-size: 1.4rem; color: var(--color-primary); }
+        .logo span { color: var(--color-accent); }
+
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { font-weight: 600; transition: var(--transition); font-size: 0.9rem; }
+        .nav-links a:hover { color: var(--color-accent); }
+
+        /* Hero section with animation */
+        .hero { padding: 180px 0 100px; text-align: center; animation: fadeInUp 0.8s ease-out; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 800; color: var(--color-primary); line-height: 1.1; margin-bottom: 1.5rem; }
+        .hero p { font-size: 1.25rem; color: var(--color-text-light); max-width: 650px; margin: 0 auto 2.5rem; }
+
+        .btn {
+            padding: 0.8rem 2rem; border-radius: 6px; font-weight: 600;
+            display: inline-block; transition: var(--transition); cursor: pointer;
+        }
+        .btn-primary { background: var(--color-primary); color: white; }
+        .btn-primary:hover { background: var(--color-accent); transform: translateY(-2px); box-shadow: 0 10px 20px rgba(37,99,235,0.2); }
+
+        /* Project Cards Refinement */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .project-card {
+            background: white; padding: 2rem; border-radius: 12px;
+            border: 1px solid #e2e8f0; transition: var(--transition);
+            display: flex; flex-direction: column;
+        }
+        .project-card:hover { border-color: var(--color-accent); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+
+        .tag { font-family: monospace; font-size: 0.75rem; background: #f1f5f9; padding: 4px 8px; border-radius: 4px; color: var(--color-text-light); }
+
+        /* Skills badges */
+        .skills-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem; }
+        .skill-badge { padding: 0.5rem 1.2rem; background: white; border: 1px solid #e2e8f0; border-radius: 100px; font-weight: 600; font-size: 0.9rem; transition: var(--transition); }
+        .skill-badge:hover { border-color: var(--color-accent); color: var(--color-accent); }
+
+        footer { padding: 4rem 0; border-top: 1px solid #e2e8f0; text-align: center; margin-top: 5rem; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero { padding: 120px 0 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">Civil<span>Dev</span>.</div>
+            <div class="nav-links">
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <h1>Structural Engineering Meets <span style="color:var(--color-accent)">Full-Stack Dev.</span></h1>
+            <p>I build digital infrastructure with the same precision and reliability required in civil engineering.</p>
+            <a href="#projects" class="btn btn-primary">Explore Projects</a>
+        </section>
+
+        <section id="projects" class="container">
+            <h2 style="font-size: 2.5rem; text-align: center;">Selected Work</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <h3 style="margin-bottom: 1rem;">Apex Civil Engineering</h3>
+                    <p style="color:var(--color-text-light); margin-bottom: 1.5rem; flex-grow:1;">
+                        A comprehensive web platform for a civil engineering firm. Built with Flask to handle dynamic project showcases and lead generation.
+                    </p>
+                    <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.5rem;">
+                        <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Tailwind CSS</span><span class="tag">PostgreSQL</span>
+                    </div>
+                    <a href="#" style="color:var(--color-accent); font-weight:700;">View Project →</a>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <h3 style="margin-bottom: 1rem;">LoadCalc Pro</h3>
+                    <p style="color:var(--color-text-light); margin-bottom: 1.5rem; flex-grow:1;">
+                        A specialized tool for engineers to calculate beam deflection and structural loads using JavaScript mathematics.
+                    </p>
+                    <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.5rem;">
+                        <span class="tag">JavaScript</span><span class="tag">CSS Grid</span><span class="tag">Math.js</span>
+                    </div>
+                    <a href="#" style="color:var(--color-accent); font-weight:700;">View Project →</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="skills" class="container" style="margin-top: 100px; text-align: center;">
+            <h2 style="margin-bottom: 1rem;">Tech Stack</h2>
+            <div class="skills-container">
+                <div class="skill-badge">Python</div>
+                <div class="skill-badge">JavaScript (ES6+)</div>
+                <div class="skill-badge">Flask / Django</div>
+                <div class="skill-badge">SQL / SQLAlchemy</div>
+                <div class="skill-badge">Tailwind v4</div>
+                <div class="skill-badge">Git & WSL2</div>
+                <div class="skill-badge">AutoCAD Automation</div>
+            </div>
+        </section>
+
+        <section id="contact" class="container" style="margin-top: 100px; text-align: center;">
+            <h2 style="margin-bottom: 1rem;">Let's Build Something</h2>
+            <p style="color:var(--color-text-light); margin-bottom: 2rem;">Available for freelance or full-time roles.</p>
+            <a href="mailto:your.email@example.com" class="btn btn-primary">Send an Email</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 [Your Name]. Built with precision in WSL 2.</p>
+    </footer>
+
+</body>
+</html>
