@@ -50,8 +50,21 @@
         /* Project Grid */
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
         
-        /* Highlight Nexus (Special Card) */
-        .featured { grid-column: 1 / -1; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important; color: white !important; border: none !important; }
+        /* --- NEW: Featured Row Wrapper (Holds the top 2 cards) --- */
+        .featured-row {
+            grid-column: 1 / -1; /* Spans full width of the main grid */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Creates side-by-side layout */
+            gap: 2rem;
+        }
+
+        /* Highlight Nexus (Special Card Styling) */
+        .featured { 
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important; 
+            color: white !important; 
+            border: none !important; 
+            height: 100%; /* Ensure equal height in row */
+        }
         .featured .project-title, .featured .project-desc { color: white !important; }
         .featured .tag { background: rgba(59, 130, 246, 0.2) !important; color: #93c5fd !important; border: 1px solid rgba(59, 130, 246, 0.3); }
 
@@ -109,27 +122,53 @@
             <h2 class="section-title">Technical Projects</h2>
             <div class="projects-grid">
                 
-                <!-- 1. Nexus Smart Scraper (Featured) -->
-                <article class="project-card featured">
-                    <div>
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                            <h3 class="project-title">Nexus Smart Scraper</h3>
-                            <span class="tag" style="background: gold; color: black; font-weight: bold;">FLAGSHIP</span>
+                <!-- FEATURED ROW (Top 2 Projects) -->
+                <div class="featured-row">
+                    
+                    <!-- 1. Nexus Council (New) -->
+                    <article class="project-card featured">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <h3 class="project-title">Nexus Council</h3>
+                                <span class="tag" style="background: gold; color: black; font-weight: bold;">NEW</span>
+                            </div>
+                            <p class="project-desc">
+                                An autonomous "Council of Experts" system. It orchestrates AI agents to hunt for web data, analyze it using local RAG (pgvector), and synthesize a final consensus report via a Moderator agent. Features a real-time Streamlit dashboard.
+                            </p>
+                            <div class="tags">
+                                <span class="tag">Multi-Agent</span>
+                                <span class="tag">Local RAG</span>
+                                <span class="tag">Celery/Redis</span>
+                                <span class="tag">Docker</span>
+                            </div>
                         </div>
-                        <p class="project-desc">
-                            An Autonomous Adaptive Intelligence Node. Nexus is a self-evolving Agentic RAG system that bridges static databases and the dynamic web. It detects knowledge gaps, hunts for information autonomously, and ingests data in real-time.
-                        </p>
-                        <div class="tags">
-                            <span class="tag">Agentic RAG</span>
-                            <span class="tag">AI Agents</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Real-time Ingestion</span>
-                        </div>
-                    </div>
-                    <a href="https://github.com/abtn/nexus-smart-scraper" target="_blank" class="project-link" style="color: #93c5fd;">View Source Code →</a>
-                </article>
+                        <a href="https://github.com/abtn/nexus-council" target="_blank" class="project-link" style="color: #93c5fd;">View Source Code →</a>
+                    </article>
 
-                <!-- 2. Nexus Frontend -->
+                    <!-- 2. Nexus Smart Scraper -->
+                    <article class="project-card featured">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <h3 class="project-title">Nexus Smart Scraper</h3>
+                                <span class="tag" style="background: gold; color: black; font-weight: bold;">FLAGSHIP</span>
+                            </div>
+                            <p class="project-desc">
+                                An Autonomous Adaptive Intelligence Node. Nexus is a self-evolving Agentic RAG system that bridges static databases and the dynamic web. It detects knowledge gaps, hunts for information autonomously, and ingests data in real-time.
+                            </p>
+                            <div class="tags">
+                                <span class="tag">Agentic RAG</span>
+                                <span class="tag">AI Agents</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">Real-time Ingestion</span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/abtn/nexus-smart-scraper" target="_blank" class="project-link" style="color: #93c5fd;">View Source Code →</a>
+                    </article>
+
+                </div>
+                <!-- END FEATURED ROW -->
+
+                <!-- 3. Nexus Frontend -->
                 <article class="project-card">
                     <h3 class="project-title">Nexus Frontend Template</h3>
                     <p class="project-desc">A Headless CMS implementation designed specifically for connecting frontend interfaces to the Nexus intelligence node.</p>
@@ -141,7 +180,7 @@
                     <a href="https://github.com/abtn/nexus-frontend-template" target="_blank" class="project-link">GitHub Repo →</a>
                 </article>
 
-                <!-- 5. Civil Site -->
+                <!-- 4. Apex Civil -->
                 <article class="project-card">
                     <h3 class="project-title">Apex Civil Engineering</h3>
                     <p class="project-desc">Modern web application for a Civil Engineering firm. Built with Flask 3 and Tailwind v4, featuring full RTL support and professional Farsi typography.</p>
@@ -153,7 +192,7 @@
                     <a href="https://github.com/abtn/civil_site" target="_blank" class="project-link">GitHub Repo →</a>
                 </article>
 
-                <!-- 4. Duplicate Finder -->
+                <!-- 5. Duplicate Finder -->
                 <article class="project-card">
                     <h3 class="project-title">Python Duplicate Finder</h3>
                     <p class="project-desc">Terminal tool using SHA-256 hashing and multiprocessing to identify duplicate files across large directories with smart chunking.</p>
@@ -165,7 +204,7 @@
                     <a href="https://github.com/abtn/duplicate-finder" target="_blank" class="project-link">GitHub Repo →</a>
                 </article>
 
-                <!-- 3. Budget Tracker -->
+                <!-- 6. Budget Tracker -->
                 <article class="project-card">
                     <h3 class="project-title">Python Budget Tracker</h3>
                     <p class="project-desc">Object-Oriented CLI application for personal finance. Features transaction logging, categorization, and persistent JSON storage.</p>
@@ -177,7 +216,7 @@
                     <a href="https://github.com/abtn/budget-tracker" target="_blank" class="project-link">GitHub Repo →</a>
                 </article>
 
-                <!-- 6. Terminal Note Taker -->
+                <!-- 7. Terminal Note Taker -->
                 <article class="project-card">
                     <h3 class="project-title">Terminal Note Taker (TN)</h3>
                     <p class="project-desc">Lightweight CLI note-taking app. Perfect for quick documentation and thoughts without leaving the terminal environment.</p>
